@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_secure_password
+  
   before_save :downcase_email
 
   PASSWORD_FORMAT = /\A
