@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   get "logout", to: "sessions#destroy"
   get "login", to: "sessions#new"
 
+  get "admin", to: "admins#index"
+
+  get "stock_items", to: "stock_items#index"
+
   # Defines the root path route ("/")
   root "catalogue#index"
 end
