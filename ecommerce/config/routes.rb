@@ -11,8 +11,14 @@ Rails.application.routes.draw do
   get "login", to: "sessions#new"
 
   get "admin", to: "admins#index"
+  get "admin/index", to: "admins#index"
 
   get "stock_items", to: "stock_items#index"
+  get "stock_items/index", to: "stock_items#index"
+  post 'stock_items/create', to: 'stock_items#create'
+  get 'stock_items/read/:id', to: 'stock_items#read'
+  put 'stock_items/update/:id', to: 'stock_items#update'
+  delete 'stock_items/delete/:id', to: 'stock_items#delete'
 
   # Defines the root path route ("/")
   root "catalogue#index"

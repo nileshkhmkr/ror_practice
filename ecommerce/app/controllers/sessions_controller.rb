@@ -19,7 +19,7 @@ class SessionsController < ApplicationController
 
   def destroy
     logout
-    render :new, notice: "Signed out."
+    redirect_to login_path, notice: "Signed out."
   end
 
   def new

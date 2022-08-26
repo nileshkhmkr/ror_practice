@@ -15,17 +15,17 @@
 
 /*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
 
-@import url(animate.min.css);
-@import url(normalize.css);
-@import url(icomoon.css);
-@import url(font-awesome.min.css);
-@import url(meanmenu.css);
-@import url(owl.carousel.min.css);
-@import url(swiper.min.css);
-@import url(slick.css);
-@import url(jquery.fancybox.min.css);
-@import url(jquery-ui.css);
-@import url(nice-select.css);
+@import "animate.min";
+@import "normalize";
+@import "icomoon";
+@import "font-awesome.min";
+@import "meanmenu";
+@import "owl.carousel.min";
+/* @import "swiper.min"; */
+@import "slick";
+@import "jquery.fancybox.min";
+@import "jquery-ui";
+@import "nice-select";
 
 /*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
 
@@ -381,7 +381,7 @@ ul.btn li:last-child {
 /** banner section **/
 
 .banner_main {
-     background: url(../images/banner.jpg);
+     background-color: #4843a3;
      background-repeat: no-repeat;
      min-height: 900px;
      background-size: 100% 100%;
@@ -783,7 +783,7 @@ ul.btn li:last-child {
 /** contact section **/
 
 .contact {
-     background: url(../images/contact_g.jpg);
+     background-color: #4843a3;
      background-repeat: no-repeat;
      background-size: 100% 100%;
      padding: 90px 0;
@@ -859,7 +859,7 @@ ul.btn li:last-child {
 /** footer **/
 
 .footer {
-     background: url(../images/footer.jpg);
+     background-color: black;
      background-repeat: no-repeat;
      background-size: 100% 100%;
      padding-top: 115px;

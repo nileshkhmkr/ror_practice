@@ -9,21 +9,24 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
 
     <!-- bootstrap css -->
-    <link rel="stylesheet" href="<%= asset_path('/css/bootstrap.min.css')%>">
+    <%= stylesheet_link_tag "bootstrap.min.css", "data-turbo-track": "reload" %>
     <!-- style css -->
-    <link rel="stylesheet" href="<%= asset_path('/css/style.css')%>">
+    <%= stylesheet_link_tag "style.css", "data-turbo-track": "reload" %>
     <!-- Responsive-->
-    <link rel="stylesheet" href="<%= asset_path('/css/responsive.css')%>">
-    <!-- fevicon -->
-    <link rel="icon" href="<%= asset_path('/images/fevicon.png')%>"" type="image/gif" />
+    <%= stylesheet_link_tag "responsive.css", "data-turbo-track": "reload" %>
     <!-- Scrollbar Custom CSS -->
-    <link rel="stylesheet" href="<%= asset_path('/css/jquery.mCustomScrollbar.min.css')%>">
+    <%= stylesheet_link_tag "jquery.mCustomScrollbar.min.css", "data-turbo-track": "reload" %>
     <!-- Tweaks for older IEs-->
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
   </head>
 
-  <body>
+  <body class="main-layout inner_posituong contact_page">
+    <!-- loader  -->
+    <div class="loader_bg">
+        <div class="loader"><%= image_tag("loading") %></div>
+    </div>
+    <!-- end loader -->
     <!-- header -->
     <header>
       <!-- header inner -->
@@ -34,7 +37,7 @@
                   <div class="full">
                       <div class="center-desk">
                         <div class="logo">
-                            <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                            <a href="index.html"><%= image_tag("logo") %></a>
                         </div>
                       </div>
                   </div>
@@ -46,21 +49,27 @@
                       </button>
                       <div class="collapse navbar-collapse" id="navbarsExample04">
                         <ul class="navbar-nav mr-auto">
-                            <li class="nav-item ">
-                              <a class="nav-link">Catalogue</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link">Orders</a>
-                            </li>
-                            <li class="nav-item active">
-                              <a class="nav-link">Profile</a>
-                            </li>
-                            <li class="nav-item d_none">
-                              <a class="nav-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-                            </li>
-                            <li class="nav-item d_none">
-                              <a class="nav-link">Login</a>
-                            </li>
+                            <% if user_signed_in? %>
+                              <li class="nav-item ">
+                                <a class="nav-link">Catalogue</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link">Orders</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link">Profile</a>
+                              </li>
+                              <li class="nav-item d_none">
+                                <a class="nav-link" href="logout">Logout <i class="fa fa-power-off danger" aria-hidden="true"></i></a>
+                              </li>
+                            <% else %>
+                              <li class="nav-item d_none">
+                                <a class="nav-link" href="login">Login</a>
+                              </li>
+                              <li class="nav-item d_none">
+                                <a class="nav-link" href="signup">Register</a>
+                              </li>
+                            <% end %>
                         </ul>
                       </div>
                   </nav>
@@ -80,7 +89,8 @@
           <div class="container">
               <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-                    <img class="logo1" src="images/logo1.png" alt="#"/>
+                    <!-- <img class="logo1" src="<%= asset_path('/images/logo1.png')%>" alt="#"/> -->
+                    <%= image_tag("logo1") %>
                     <ul class="social_icon">
                       <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                       <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -116,12 +126,13 @@
     <!-- end footer -->
 
     <!-- Javascript files-->
-    <script src="<%= asset_path('/js/jquery.min.js')%>"></script>
-    <script src="<%= asset_path('/js/popper.min.js')%>"></script>
-    <script src="<%= asset_path('/js/bootstrap.bundle.min.js')%>"></script>
-    <script src="<%= asset_path('/js/jquery-3.0.0.min.js')%>"></script>
+    <%= javascript_include_tag "jquery.min", "data-turbolinks-track" => true  %>
+    <%= javascript_include_tag "popper.min", "data-turbolinks-track" => true  %>
+    <%= javascript_include_tag "bootstrap.bundle.min", "data-turbolinks-track" => true  %>
+    <%= javascript_include_tag "jquery-3.0.0.min", "data-turbolinks-track" => true  %>
     <!-- sidebar -->
-    <script src="<%= asset_path('/js/jquery.mCustomScrollbar.concat.min.js')%>"></script>
-    <script src="<%= asset_path('/js/custom.js')%>"></script>
+    <%= javascript_include_tag "jquery.mCustomScrollbar.concat.min", "data-turbolinks-track" => true  %>
+    <%= javascript_include_tag "custom", "data-turbolinks-track" => true  %>
+
   </body>
 </html>

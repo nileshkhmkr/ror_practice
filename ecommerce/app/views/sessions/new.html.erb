@@ -1,13 +1,32 @@
-<%= form_with url: login_path, scope: :user do |form| %>
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email, required: true %>
+<div class="contact">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+          <div class="titlepage">
+              <h2>Login</h2>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <%= form_with url: login_path, :html => {:class => 'main_form'}, scope: :user do |form| %>
+          <div class="row">
+            <div class="col-md-12 ">
+              <%= form.email_field :email, required: true, class: "contactus", placeholder: "Email" %>
+            </div>
+            <div class="col-md-12 ">
+              <%= form.password_field :password, required: true, class: "contactus", placeholder: "Password" %>
+            </div>
+            <div class="col-md-12 ">
+              <%= form.submit "Sign In", class: "send_btn" %>
+            </div>
+          </div>
+          <br>
+          <div class="text-center">
+            <%= link_to "Not having account yet? Sign-up here", signup_path, method: :new %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password, required: true %>
-  </div>
-  <%= form.submit "Sign In" %>
-<% end %>
-<br>
-<%= link_to "Not having account yet? Sign-up here", signup_path, method: :new %>
+</div>
