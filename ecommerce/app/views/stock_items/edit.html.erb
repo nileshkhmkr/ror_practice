@@ -1,14 +1,14 @@
-<%= form_with model: @stock_item, url: "create" do |form| %>
+<%= form_with model: @stock_item, url: "/stock_items/update/#{@stock_item.id}" do |form| %>
 	<%= render partial: "shared/form_errors", locals: { object: form.object } %>
 	
 	<%= form.label "Name" %>
-	<%= form.text_field "stock_item[name]", value: @stock_item.name, placeholder: "Add Item Name" %>
+	<%= form.text_field :name, value: @stock_item.name, placeholder: "Add Item Name" %>
 
 	<%= form.label :price, "Price" %>
-	<%= form.text_field "stock_item[price]", value: @stock_item.price, placeholder: "Add Item Price" %>
+	<%= form.text_field :price, value: @stock_item.price, placeholder: "Add Item Price" %>
 
 	<%= form.label :quantity, "Quantity" %>
-	<%= form.text_field "stock_item[quantity]", value: @stock_item.quantity, min:1, placeholder: "Add number of items in stock" %>
+	<%= form.text_field :quantity, value: @stock_item.quantity, min:1, placeholder: "Add number of items in stock" %>
 
 	<%= form.submit class: "btn btn-large btn-success" %>
 <% end %>

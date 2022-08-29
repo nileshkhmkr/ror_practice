@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   post 'stock_items/create', to: 'stock_items#create'
   get 'stock_items/read/:id', to: 'stock_items#read'
   get 'stock_items/edit/:id', to: 'stock_items#edit'
-  put 'stock_items/update/:id', to: 'stock_items#update'
+  patch 'stock_items/update/:id', to: 'stock_items#update'
   delete 'stock_items/delete/:id', to: 'stock_items#delete'
 
   # Defines the root path route ("/")

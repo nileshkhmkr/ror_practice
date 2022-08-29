@@ -3,7 +3,7 @@
 		<div class="col-md-12">
 			<div class="titlepage">
 				<h4>Stock Items
-					<span class='pull-right'><%= link_to "Add New", "stock_items/new", class:'btn' %></span>
+					<span class='pull-right'><%= link_to "Add New", "/stock_items/new", class:'btn' %></span>
 				</h4>
 			</div>
 		</div>
@@ -26,9 +26,9 @@
 						<td><%= stock_item.name %></td>
 						<td><%= stock_item.price %></td>
 						<td><%= stock_item.quantity %></td>
-						<td><%= link_to '', { controller: 'stock_items', action: 'admin_view' ,id:stock_item.id } %>
-							<%= link_to '', { controller: 'stock_items', action: 'edit' ,id:stock_item.id } %>
-							<%= button_to 'Delete', { controller: 'stock_items', action: 'destroy', id:stock_item.id },data: { confirm: "Are you sure?" }, method:'delete' %></td>
+						<td><%= link_to 'View', { controller: 'stock_items', action: 'read' ,id:stock_item.id } %>
+							<%= link_to 'Edit', { controller: 'stock_items', action: 'edit' ,id:stock_item.id } %>
+							<%= button_to 'Delete', { controller: 'stock_items', action: 'delete', id:stock_item.id },data: { confirm: "Are you sure?" }, method:'delete' %></td>
 					</tr>
 				<% end %>
 
