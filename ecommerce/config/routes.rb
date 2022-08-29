@@ -15,8 +15,10 @@ Rails.application.routes.draw do
 
   get "stock_items", to: "stock_items#index"
   get "stock_items/index", to: "stock_items#index"
+  get 'stock_items/new', to: 'stock_items#new'
   post 'stock_items/create', to: 'stock_items#create'
   get 'stock_items/read/:id', to: 'stock_items#read'
+  get 'stock_items/edit/:id', to: 'stock_items#edit'
   put 'stock_items/update/:id', to: 'stock_items#update'
   delete 'stock_items/delete/:id', to: 'stock_items#delete'
 

@@ -599,7 +599,7 @@ ul.btn li:last-child {
 /** products section **/
 
 .products {
-     margin-top: 90px;
+     margin-top: 5px;
      background: #f7f7f7;
      padding: 90px 0 90px 0;
 }
@@ -1009,11 +1009,11 @@ ul.social_icon li a:hover {
 }
 
 .computer_page .laptop {
-     margin-top: 90px;
+     margin-top: 5px;
 }
 
 .contact_page .contact {
-     margin-top: 90px;
+     margin-top: 5px;
 }
 
 
