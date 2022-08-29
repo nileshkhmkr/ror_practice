@@ -12,6 +12,14 @@
 					<div class="col-md-12">
 						<div class="our_products">
 								<div class="row">
+									<% @products.each do |product| %>
+										<div class="col-md-4 margin_bottom1">
+											<div class="product_box">
+												<figure><%= image_tag("product1.png") %></figure>
+												<h3><%= product.name %></h3>
+											</div>
+										</div>
+									<% end %>
 									<div class="col-md-4 margin_bottom1">
 											<div class="product_box">
 												<figure><%= image_tag("product1.png") %></figure>

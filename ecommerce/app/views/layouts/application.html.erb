@@ -51,23 +51,23 @@
                         <ul class="navbar-nav mr-auto">
                             <% if user_signed_in? %>
                               <li class="nav-item ">
-                                <a class="nav-link">Catalogue</a>
+                                <a class="nav-link" href="/catalogue">Catalogue</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link">Orders</a>
+                                <a class="nav-link" href="/orders">Orders</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link">Profile</a>
+                                <a class="nav-link" href="/profile">Profile</a>
                               </li>
                               <li class="nav-item d_none">
-                                <a class="nav-link" href="logout">Logout <i class="fa fa-power-off danger" aria-hidden="true"></i></a>
+                                <a class="nav-link" href="/logout">Logout <i class="fa fa-power-off danger" aria-hidden="true"></i></a>
                               </li>
                             <% else %>
                               <li class="nav-item d_none">
-                                <a class="nav-link" href="login">Login</a>
+                                <a class="nav-link" href="/login">Login</a>
                               </li>
                               <li class="nav-item d_none">
-                                <a class="nav-link" href="signup">Register</a>
+                                <a class="nav-link" href="/signup">Register</a>
                               </li>
                             <% end %>
                         </ul>

@@ -19,19 +19,16 @@
 				</tr>
 			</thead>
 			<tbody>
-				<% 
-				i = 0
-				@stock_items.each do |stock_item| %>
+				<% @stock_items.each do |stock_item| %>
 					<tr>    
 						<td><%= stock_item.name %></td>
 						<td><%= stock_item.price %></td>
 						<td><%= stock_item.quantity %></td>
-						<td><%= link_to 'View', { controller: 'stock_items', action: 'read' ,id:stock_item.id } %>
+						<td><%= link_to 'View', { controller: 'stock_items', action: 'view' ,id:stock_item.id } %>
 							<%= link_to 'Edit', { controller: 'stock_items', action: 'edit' ,id:stock_item.id } %>
 							<%= button_to 'Delete', { controller: 'stock_items', action: 'delete', id:stock_item.id },data: { confirm: "Are you sure?" }, method:'delete' %></td>
 					</tr>
 				<% end %>
-
 			</tbody>
 		</table>
 	</div>

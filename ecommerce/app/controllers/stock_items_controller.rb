@@ -19,7 +19,7 @@ class StockItemsController < ApplicationController
 		@stock_item = StockItem.new
 	end
 	
-	def read
+	def view
 		@stock_item = StockItem.find(params[:id])
 	end
 	
