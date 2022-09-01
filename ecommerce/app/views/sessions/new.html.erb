@@ -11,7 +11,6 @@
       <div class="col-md-6 offset-md-3">
         <%= form_with url: login_path, :html => {:class => 'main_form'}, scope: :user do |form| %>
           <div class="row">
-          <%= render partial: "shared/form_errors", locals: { object: form.object } %>
             <div class="col-md-12 ">
               <%= form.email_field :email, required: true, class: "contactus", placeholder: "Email" %>
             </div>

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+	protect_from_forgery except: [:update]
 	before_action :redirect_if_authenticated, only: [:create, :new]
 	
 	def create
@@ -12,6 +13,19 @@ class UsersController < ApplicationController
 
 	def new
 		@user = User.new
+	end
+
+	def edit
+		@user = User.find(session[:current_user_id])
+	end
+
+	def update
+		@user = User.find(session[:current_user_id])
+    if @user.update(user_params)
+			redirect_to profile_path, notice: "Profile updated."
+		else
+			render :edit, status: :unprocessable_entity
+		end
 	end
 
 	private

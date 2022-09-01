@@ -37,7 +37,7 @@
                   <div class="full">
                       <div class="center-desk">
                         <div class="logo">
-                            <a href="index.html"><%= image_tag("logo") %></a>
+                            <a href="/catalogue"><%= image_tag("logo") %></a>
                         </div>
                       </div>
                   </div>
@@ -80,6 +80,10 @@
       <!-- end header inner -->
     </header>
     <!-- end header -->
+
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: "alert alert-info" %>
+    <% end %>
 
     <%= yield %>
 
