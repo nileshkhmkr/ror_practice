@@ -862,7 +862,7 @@ ul.btn li:last-child {
      background-color: black;
      background-repeat: no-repeat;
      background-size: 100% 100%;
-     padding-top: 115px;
+     padding-top: 20px;
      text-align: center;
 }
 
@@ -975,7 +975,7 @@ ul.social_icon li a:hover {
 }
 
 .copyright {
-     margin-top: 80px;
+     margin-top: 20px;
      padding-bottom: 20px;
 }
 
