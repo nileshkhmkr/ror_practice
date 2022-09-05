@@ -1,35 +1,37 @@
-<div class="container">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="titlepage">
-				<h4>Stock Items
-					<span class='pull-right'><%= link_to "Add New", "/stock_items/new", class:'btn' %></span>
-				</h4>
+<div  class="products">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="titlepage">
+					<h4>Stock Items
+						<span class='pull-right'><%= link_to "Add New", "/stock_items/new", class:'btn' %></span>
+					</h4>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class="row">
-		<table>
-			<thead>
-				<tr>
-					<th scope="col">Name</th>
-					<th scope="col">Price</th>
-					<th scope="col">Quantity</th>
-					<th scope="col">Actions</th>
-				</tr>
-			</thead>
-			<tbody>
-				<% @stock_items.each do |stock_item| %>
-					<tr>    
-						<td><%= stock_item.name %></td>
-						<td><%= stock_item.price %></td>
-						<td><%= stock_item.quantity %></td>
-						<td><%= link_to 'View', { controller: 'stock_items', action: 'view' ,id:stock_item.id } %>
-							<%= link_to 'Edit', { controller: 'stock_items', action: 'edit' ,id:stock_item.id } %>
-							<%= button_to 'Delete', { controller: 'stock_items', action: 'delete', id:stock_item.id },data: { confirm: "Are you sure?" }, method:'delete' %></td>
+		<div class="row">
+			<table>
+				<thead>
+					<tr>
+						<th scope="col">Name</th>
+						<th scope="col">Price</th>
+						<th scope="col">Quantity</th>
+						<th scope="col">Actions</th>
 					</tr>
-				<% end %>
-			</tbody>
-		</table>
+				</thead>
+				<tbody>
+					<% @stock_items.each do |stock_item| %>
+						<tr>    
+							<td><%= stock_item.name %></td>
+							<td><%= stock_item.price %></td>
+							<td><%= stock_item.quantity %></td>
+							<td><%= link_to 'View', { controller: 'stock_items', action: 'view' ,id:stock_item.id } %>
+								<%= link_to 'Edit', { controller: 'stock_items', action: 'edit' ,id:stock_item.id } %>
+								<%= button_to 'Delete', { controller: 'stock_items', action: 'delete', id:stock_item.id },data: { confirm: "Are you sure?" }, method:'delete' %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
 	</div>
 </div>

@@ -16,7 +16,9 @@
 										<div class="col-md-4 margin_bottom1">
 											<div class="product_box">
 												<figure><%= image_tag("product1.png") %></figure>
-												<h3><%= product.name %></h3>
+												<h4><%= product.name %></h4>
+												<p>Rs. <%= product.price %></p>
+												<%= link_to "Add to cart", "/carts/add/#{product.id}", class:'btn btn-info' %>
 											</div>
 										</div>
 									<% end %>

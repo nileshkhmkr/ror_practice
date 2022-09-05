@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   get "profile", to: "users#edit"
   patch "user/update", to: "users#update"
 
-  get 'address/new', to: 'address#new'
-  post 'address/create', to: 'address#create'
-  get "address/edit/:id", to: "address#edit"
-  patch "address/update/:id", to: "address#update"
-  delete 'address/delete/:id', to: 'address#delete'
+  get 'addresses/new', to: 'addresses#new'
+  post 'addresses/create', to: 'addresses#create'
+  get "addresses/edit/:id", to: "addresses#edit"
+  patch "addresses/update/:id", to: "addresses#update"
+  delete 'addresses/delete/:id', to: 'addresses#delete'
 
   get "catalogue", to: "catalogue#index"
   get "catalogue/index", to: "catalogue#index"  
@@ -31,6 +31,8 @@ Rails.application.routes.draw do
   get 'stock_items/edit/:id', to: 'stock_items#edit'
   patch 'stock_items/update/:id', to: 'stock_items#update'
   delete 'stock_items/delete/:id', to: 'stock_items#delete'
+
+  get 'carts/add/:id', to: 'carts#add'
 
   # Defines the root path route ("/")
   root "catalogue#index"

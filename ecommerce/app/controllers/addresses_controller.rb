@@ -1,4 +1,4 @@
-class AddressController < ApplicationController
+class AddressesController < ApplicationController
 	protect_from_forgery except: [:create]
 	before_action :login_if_not_authenticated
 

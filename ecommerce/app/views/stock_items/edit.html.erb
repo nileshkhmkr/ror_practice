@@ -1,17 +1,30 @@
-<%= form_with model: @stock_item, url: "/stock_items/update/#{@stock_item.id}" do |form| %>
-	<%= render partial: "shared/form_errors", locals: { object: form.object } %>
-	
-	<%= form.label "Name" %>
-	<%= form.text_field :name, value: @stock_item.name, placeholder: "Add Item Name" %>
-
-	<%= form.label :price, "Price" %>
-	<%= form.text_field :price, value: @stock_item.price, placeholder: "Add Item Price" %>
-
-	<%= form.label :quantity, "Quantity" %>
-	<%= form.text_field :quantity, value: @stock_item.quantity, min:1, placeholder: "Add number of items in stock" %>
-
-	<%= form.label :image, "Image" %>
-    <%= form.file_field :image, required: true %>
-
-	<%= form.submit class: "btn btn-large btn-success" %>
-<% end %>
+<div  class="products">
+	<div class="container">
+		<div class="row">
+			<%= form_with model: @stock_item, :html => { :multipart => true }, url: "/stock_items/update/#{@stock_item.id}" do |form| %>
+				<div class="row">	
+					<%= render partial: "shared/form_errors", locals: { object: form.object } %>
+					<div class="col-md-12 ">
+						<%= form.label "Name" %>
+						<%= form.text_field :name, value: @stock_item.name, placeholder: "Add Item Name" %>
+					</div>
+					<div class="col-md-12 ">
+						<%= form.label :price, "Price" %>
+						<%= form.text_field :price, value: @stock_item.price, placeholder: "Add Item Price" %>
+					</div>
+					<div class="col-md-12 ">
+						<%= form.label :quantity, "Quantity" %>
+						<%= form.text_field :quantity, value: @stock_item.quantity, min:1, placeholder: "Add number of items in stock" %>
+					</div>
+					<div class="col-md-12 ">
+						<%= form.label :image, "Image" %>
+						<%= form.file_field :image, required: true %>
+					</div>
+					<div class="col-md-12 ">
+						<%= form.submit class: "btn btn-large btn-success" %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
