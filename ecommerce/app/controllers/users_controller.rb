@@ -17,11 +17,12 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = User.find(session[:current_user_id])
+		@addresses = Address.order('created_at DESC')
 	end
 
 	def update
 		@user = User.find(session[:current_user_id])
-    if @user.update(user_params)
+    	if @user.update(user_params)
 			redirect_to profile_path, notice: "Profile updated."
 		else
 			render :edit, status: :unprocessable_entity

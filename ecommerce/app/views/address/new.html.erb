@@ -1,0 +1,14 @@
+<%= form_with model: @address, url: "create" do |form| %>
+	<div class="row">
+		<%= render partial: "shared/form_errors", locals: { object: form.object } %>
+		<div class="col-md-12 ">
+			<%= form.text_field :address, required: true, class: "contactus", placeholder: "Address" %>
+		</div>
+		<div class="col-md-12 ">
+			<%= form.text_field :contact, required: true, class: "contactus", placeholder: "Contact" %>
+		</div>
+		<div class="col-md-12 ">
+			<%= form.submit "Update", class: "send_btn" %>
+		</div>
+	</div>
+<% end %>

@@ -38,7 +38,7 @@ class StockItemsController < ApplicationController
 	
 	def delete
 		@stock_item = StockItem.find(params[:id])
-    @stock_item.destroy
+    	@stock_item.destroy
 		redirect_to "/stock_items/index", notice: "Item deleted."
 	end
 

@@ -10,5 +10,8 @@
 	<%= form.label :quantity, "Quantity" %>
 	<%= form.text_field :quantity, value: @stock_item.quantity, min:1, placeholder: "Add number of items in stock" %>
 
+	<%= form.label :image, "Image" %>
+    <%= form.file_field :image, required: true %>
+
 	<%= form.submit class: "btn btn-large btn-success" %>
 <% end %>

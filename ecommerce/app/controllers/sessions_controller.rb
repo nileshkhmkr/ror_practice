@@ -6,7 +6,12 @@ class SessionsController < ApplicationController
     if @user
       if @user.authenticate(params[:user][:password])
         login @user
-        redirect_to root_path, notice: "Signed in."
+        if current_user.admin?
+          redirection_path = admin_path
+        else
+          redirection_path = root_path
+        end
+        redirect_to redirection_path, notice: "Signed in."
       else
         flash.now[:alert] = "Incorrect email or password."
         render :new, status: :unprocessable_entity

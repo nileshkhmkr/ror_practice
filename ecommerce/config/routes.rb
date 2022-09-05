@@ -6,6 +6,12 @@ Rails.application.routes.draw do
   get "profile", to: "users#edit"
   patch "user/update", to: "users#update"
 
+  get 'address/new', to: 'address#new'
+  post 'address/create', to: 'address#create'
+  get "address/edit/:id", to: "address#edit"
+  patch "address/update/:id", to: "address#update"
+  delete 'address/delete/:id', to: 'address#delete'
+
   get "catalogue", to: "catalogue#index"
   get "catalogue/index", to: "catalogue#index"  
   get "orders", to: "catalogue#orders"

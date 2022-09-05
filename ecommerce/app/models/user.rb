@@ -14,7 +14,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, format: {with: URI::MailTo::EMAIL_REGEXP}, presence: true, uniqueness: true
-  validates :password, presence: true, format: { with: PASSWORD_FORMAT }, confirmation: true
+  validates :password, format: { with: PASSWORD_FORMAT }, confirmation: true
 
   private
 
