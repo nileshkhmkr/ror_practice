@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = User.find(session[:current_user_id])
-		@addresses = Address.order('created_at DESC')
+		@addresses = Address.where(user_id: "#{session[:current_user_id]}").order('created_at DESC')
 	end
 
 	def update

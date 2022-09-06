@@ -8,7 +8,7 @@ class AddressesController < ApplicationController
 
 	def create
 		@address = Address.new(address_params)
-		@address.user_id = current_user_id
+		@address.user_id = session[:current_user_id]
 		if @address.save
 			redirect_to profile_path, notice: "Address added."
 		else
