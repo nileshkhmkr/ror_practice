@@ -32,7 +32,9 @@ Rails.application.routes.draw do
   patch 'stock_items/update/:id', to: 'stock_items#update'
   delete 'stock_items/delete/:id', to: 'stock_items#delete'
 
-  get 'carts/add/:id', to: 'carts#add'
+  get 'carts', to: 'carts#index'
+  get 'carts/index', to: 'carts#index'
+  get 'carts/add_item/:id', to: 'carts#add_item'
 
   # Defines the root path route ("/")
   root "catalogue#index"

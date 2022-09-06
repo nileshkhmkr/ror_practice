@@ -8,6 +8,7 @@ class AddressesController < ApplicationController
 
 	def create
 		@address = Address.new(address_params)
+		@address.user_id = current_user_id
 		if @address.save
 			redirect_to profile_path, notice: "Address added."
 		else
@@ -41,6 +42,6 @@ class AddressesController < ApplicationController
 	private
 
 	def address_params
-		params.require(:address).permit(:address, :contact)
+		params.require(:address).permit(:address, :contact, :user_id)
 	end
 end

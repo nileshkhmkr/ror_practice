@@ -18,7 +18,7 @@
 												<figure><%= image_tag("product1.png") %></figure>
 												<h4><%= product.name %></h4>
 												<p>Rs. <%= product.price %></p>
-												<%= link_to "Add to cart", "/carts/add/#{product.id}", class:'btn btn-info' %>
+												<%= link_to "Add to cart", "/carts/add_item/#{product.id}", class:'btn btn-info' %>
 											</div>
 										</div>
 									<% end %>

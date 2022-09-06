@@ -45,7 +45,7 @@ class StockItemsController < ApplicationController
 	private
 
 	def stock_item_params
-		params.require(:stock_item).permit(:name, :price, :quantity)
+		params.require(:stock_item).permit(:name, :price, :quantity, :image)
 	end
 
 end
